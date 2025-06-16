@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login | PKBM Celah Cahaya</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* Tambahan minimal jika tidak ada style.css */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f2f5;
+      background: linear-gradient(to right, #e0ecf8, #f4f8ff);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,74 +22,74 @@
     }
 
     .container {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       width: 100%;
+      max-width: 400px;
       text-align: center;
     }
 
     .logo {
-      width: 150px;
-      height: auto;
+      width: 120px;
       margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: #333;
     }
 
-    form {
-      text-align: left;
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
     }
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-      margin-top: 15px;
-      color: #555;
+    .input-group i {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: #999;
     }
 
-    input {
+    .input-group input {
       width: 100%;
-      padding: 10px;
-      border-radius: 6px;
+      padding: 12px 12px 12px 40px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      box-sizing: border-box;
-      font-size: 14px;
+      outline: none;
+      font-size: 15px;
+      transition: border-color 0.3s;
     }
 
-    button[type="submit"] {
+    .input-group input:focus {
+      border-color: #007bff;
+    }
+
+    button {
       width: 100%;
       padding: 12px;
-      background-color: #0057b8;
+      background: #007bff;
       color: white;
       border: none;
-      border-radius: 6px;
-      margin-top: 20px;
+      border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.3s;
     }
 
-    button[type="submit"]:hover {
-      background-color: #004494;
+    button:hover {
+      background: #0056b3;
     }
 
     .link-text {
-      text-align: center;
       margin-top: 20px;
       font-size: 14px;
     }
 
     .link-text a {
-      color: #0057b8;
+      color: #007bff;
       text-decoration: none;
     }
 
@@ -96,7 +99,7 @@
 
     @media (max-width: 480px) {
       .container {
-        padding: 20px 15px;
+        padding: 30px 20px;
       }
     }
   </style>
@@ -104,19 +107,23 @@
 <body>
   <div class="container">
     <img src="asset/LOGO.jpg" alt="Logo PKBM Celah Cahaya" class="logo" />
-    <h2>Masuk ke PKBM Celah Cahaya</h2>
+    <h2>Login Siswa</h2>
     <form id="loginForm">
-      <label for="email">Email</label>
-      <input type="email" id="email" required />
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" required />
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
 
       <button type="submit">Masuk</button>
     </form>
 
     <p class="link-text">
-      Belum punya akun? <a href="register.html">Daftar</a>
+      Belum punya akun? <a href="register.html">Daftar sekarang</a>
     </p>
   </div>
 
