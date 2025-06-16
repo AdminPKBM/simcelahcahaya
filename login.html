@@ -1,0 +1,25 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login PKBM</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+</head>
+<body>
+  <h2>Login Warga Belajar</h2>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      firebase.auth().signInWithEmailAndPassword(email, pass)
+        .then(user => window.location.href = 'dashboard.html')
+        .catch(err => alert(err.message));
+    }
+  </script>
+</body>
+</html>
