@@ -10,27 +10,39 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
   <script defer src="/js/firebase.js"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="min-h-screen flex flex-col items-center justify-center p-6">
-    <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-      <h1 class="text-2xl font-bold mb-4 text-center">Sistem Pembelajaran PKBM Celah Cahaya</h1>
-      <p class="mb-6 text-sm text-center text-gray-600">Untuk Paket B & Paket C (Kelas 7 - 12)</p>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Email</label>
-        <input id="email" type="email" class="w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring" placeholder="email@domain.com" />
-      </div>
-      <div class="mb-4">
-        <label class="block text-sm font-medium mb-1">Password</label>
-        <input id="password" type="password" class="w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring" placeholder="••••••••" />
-      </div>
-
-      <button onclick="login()" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Masuk</button>
-
-      <div class="mt-4 text-center">
-        <a href="register.html" class="text-blue-600 text-sm hover:underline">Belum punya akun? Daftar</a>
-      </div>
+<body class="bg-gradient-to-tr from-blue-50 to-white text-gray-800 min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 animate-fade-in">
+    
+    <!-- Logo -->
+    <div class="flex justify-center mb-4">
+      <img src="asset/LOGO.jpg" alt="Logo PKBM Celah Cahaya" class="w-24 h-24 object-contain rounded-full border border-gray-200 shadow-sm" />
     </div>
+
+    <!-- Judul -->
+    <h1 class="text-2xl font-bold text-center mb-2">Sistem Pembelajaran</h1>
+    <h2 class="text-lg text-center text-blue-600 font-semibold mb-4">PKBM Celah Cahaya</h2>
+    <p class="text-sm text-center text-gray-500 mb-6">Paket B & C | Kelas 7 - 12</p>
+
+    <!-- Form Login -->
+    <div class="space-y-4">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input id="email" type="email" class="mt-1 w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="email@domain.com" />
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input id="password" type="password" class="mt-1 w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="••••••••" />
+      </div>
+
+      <button onclick="login()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300 ease-in-out">
+        Masuk
+      </button>
+    </div>
+
+    <!-- Link ke Register -->
+    <p class="mt-5 text-center text-sm text-gray-600">
+      Belum punya akun? <a href="register.html" class="text-blue-600 hover:underline">Daftar di sini</a>
+    </p>
   </div>
 
   <script>
@@ -38,7 +50,7 @@
       apiKey: "AIzaSyBM-bS7ZY7BRM14c08UBX2RMRaU-DDeaps",
       authDomain: "pkbm-celah-cahaya.firebaseapp.com",
       projectId: "pkbm-celah-cahaya",
-      storageBucket: "pkbm-celah-cahaya.firebasestorage.app",
+      storageBucket: "pkbm-celah-cahaya.appspot.com",
       messagingSenderId: "714777975642",
       appId: "1:714777975642:web:9edcb345070f7cfeeeb163"
     };
@@ -58,5 +70,16 @@
         });
     }
   </script>
+
+  <!-- Animasi sederhana (opsional) -->
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </body>
 </html>
